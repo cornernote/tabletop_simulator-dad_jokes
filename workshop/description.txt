@@ -1,0 +1,39 @@
+[h1]Endless Dad Jokes[/h1]
+
+Ever wished your tabletop sessions came with a steady supply of eye-rolls and groans?
+This bag delivers exactly that: every time you pull a notecard from the bag, it fetches a fresh [i]dad joke[/i] straight from the internet and writes it onto the card.
+
+No repeats, no setup needed - just terrible puns on demand.
+
+[h2]=== FEATURES ===[/h2]
+
+[list]
+[*] Automatic dad joke generation using the icanhazdadjoke API
+[*] Jokes appear directly on notecards as you draw them
+[*] Container has a custom funny title & description to set the mood
+[*] Perfect for icebreakers, filler moments, or torturing your friends
+[/list]
+
+[h2]=== HOW TO USE ===[/h2]
+
+[list]
+[*] Spawn the bag.
+[*] Pull out a notecard.
+[*] Read the joke aloud (bonus points for dramatic delivery).
+[/list]
+
+[h2]=== DISCLAIMER ===[/h2]
+
+Side effects may include:
+
+[list]
+[*] Groaning
+[*] Facepalming
+[*] Sudden urge to tell worse jokes
+[/list]
+
+[h2]=== RESOURCES ===[/h2]
+
+[list]
+[*] [url=https://github.com/cornernote/tabletop_simulator-dad_jokes]Some assets and a copy of the savegame on GitHub[/url]
+[/list]
