@@ -1,3 +1,9 @@
+-- Bag of Dad Jokes by CoRNeRNoTe
+-- Pull a notecard to get a random dad joke.
+
+-- Most recent script can be found on GitHub:
+-- https://github.com/cornernote/tabletop_simulator-dad_jokes/blob/main/lua/dad-jokes.lua
+
 local apiUrl = "https://icanhazdadjoke.com/"
 local apiHeaders = { Accept = "application/json" }
 
