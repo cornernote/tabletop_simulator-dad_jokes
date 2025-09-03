@@ -1,11 +1,11 @@
 {
   "SaveName": "None",
-  "EpochTime": 1756870047,
-  "Date": "9/3/2025 12:57:27 PM",
+  "EpochTime": 1756895351,
+  "Date": "9/3/2025 7:59:11 PM",
   "VersionNumber": "v13.3",
-  "GameMode": "Bag of Dad Jokes",
-  "GameType": "Objects",
-  "GameComplexity": "",
+  "GameMode": "Endless Dad Jokes",
+  "GameType": "Game",
+  "GameComplexity": "Low Complexity",
   "PlayingTime": [
     0,
     0
@@ -516,18 +516,18 @@
       "GUID": "1c65c8",
       "Name": "Infinite_Bag",
       "Transform": {
-        "posX": 0.03408897,
-        "posY": 0.943000436,
-        "posZ": 0.172666579,
-        "rotX": -2.41615E-05,
-        "rotY": -8.030615E-07,
-        "rotZ": 2.3537084E-06,
+        "posX": 0.03408874,
+        "posY": 0.943,
+        "posZ": 0.172666818,
+        "rotX": 7.991417E-06,
+        "rotY": 1.65046222E-05,
+        "rotZ": -2.35566333E-07,
         "scaleX": 1.0,
         "scaleY": 1.0,
         "scaleZ": 1.0
       },
-      "Nickname": "Bag of Dad Jokes",
-      "Description": "\nEvery time you pull out a notecard, prepare yourself for a fresh dose of dad-level comedy. \r\n\nWARNING: may cause uncontrollable eye rolls, snorts, and awkward silence.\n\n----------",
+      "Nickname": "Endless Dad Jokes v1.0",
+      "Description": "\nEvery time you pull out a notecard, prepare yourself for a fresh dose of dad-level comedy. \r\n\nWARNING: may cause uncontrollable eye rolls, snorts, and awkward silence.\n\n----------\nhttps://steamcommunity.com/sharedfiles/filedetails/?id=3561179987",
       "GMNotes": "",
       "AltLookAngle": {
         "x": 0.0,
@@ -605,186 +605,6 @@
           "XmlUI": ""
         }
       ]
-    },
-    {
-      "GUID": "467422",
-      "Name": "Notecard",
-      "Transform": {
-        "posX": 7.43626165,
-        "posY": 1.02999938,
-        "posZ": -1.22862113,
-        "rotX": 2.39758865E-05,
-        "rotY": 0.0116173727,
-        "rotZ": -1.112499E-05,
-        "scaleX": 1.0,
-        "scaleY": 1.0,
-        "scaleZ": 1.0
-      },
-      "Nickname": "Dad Joke",
-      "Description": "It's difficult to say what my wife does, she sells sea shells by the sea shore.",
-      "GMNotes": "",
-      "AltLookAngle": {
-        "x": 0.0,
-        "y": 0.0,
-        "z": 0.0
-      },
-      "ColorDiffuse": {
-        "r": 1.0,
-        "g": 1.0,
-        "b": 1.0
-      },
-      "LayoutGroupSortIndex": 0,
-      "Value": 0,
-      "Locked": false,
-      "Grid": true,
-      "Snap": true,
-      "IgnoreFoW": false,
-      "MeasureMovement": false,
-      "DragSelectable": true,
-      "Autoraise": true,
-      "Sticky": true,
-      "Tooltip": true,
-      "GridProjection": false,
-      "HideWhenFaceDown": false,
-      "Hands": false,
-      "LuaScript": "",
-      "LuaScriptState": "",
-      "XmlUI": ""
-    },
-    {
-      "GUID": "267733",
-      "Name": "Notecard",
-      "Transform": {
-        "posX": 2.60782433,
-        "posY": 1.12524807,
-        "posZ": -4.251776,
-        "rotX": 357.354919,
-        "rotY": 0.00368962158,
-        "rotZ": 0.000235209634,
-        "scaleX": 1.0,
-        "scaleY": 1.0,
-        "scaleZ": 1.0
-      },
-      "Nickname": "Dad Joke",
-      "Description": "Did you know the first French fries weren't actually cooked in France? They were cooked in Greece.",
-      "GMNotes": "",
-      "AltLookAngle": {
-        "x": 0.0,
-        "y": 0.0,
-        "z": 0.0
-      },
-      "ColorDiffuse": {
-        "r": 1.0,
-        "g": 1.0,
-        "b": 1.0
-      },
-      "LayoutGroupSortIndex": 0,
-      "Value": 0,
-      "Locked": false,
-      "Grid": true,
-      "Snap": true,
-      "IgnoreFoW": false,
-      "MeasureMovement": false,
-      "DragSelectable": true,
-      "Autoraise": true,
-      "Sticky": true,
-      "Tooltip": true,
-      "GridProjection": false,
-      "HideWhenFaceDown": false,
-      "Hands": false,
-      "LuaScript": "",
-      "LuaScriptState": "",
-      "XmlUI": ""
-    },
-    {
-      "GUID": "086760",
-      "Name": "Notecard",
-      "Transform": {
-        "posX": -1.6722194,
-        "posY": 1.12157488,
-        "posZ": -7.43746328,
-        "rotX": 357.456818,
-        "rotY": 359.99057,
-        "rotZ": 5.21689726E-05,
-        "scaleX": 1.0,
-        "scaleY": 1.0,
-        "scaleZ": 1.0
-      },
-      "Nickname": "Dad Joke",
-      "Description": "What did the grape do when he got stepped on? He let out a little wine.",
-      "GMNotes": "",
-      "AltLookAngle": {
-        "x": 0.0,
-        "y": 0.0,
-        "z": 0.0
-      },
-      "ColorDiffuse": {
-        "r": 1.0,
-        "g": 1.0,
-        "b": 1.0
-      },
-      "LayoutGroupSortIndex": 0,
-      "Value": 0,
-      "Locked": false,
-      "Grid": true,
-      "Snap": true,
-      "IgnoreFoW": false,
-      "MeasureMovement": false,
-      "DragSelectable": true,
-      "Autoraise": true,
-      "Sticky": true,
-      "Tooltip": true,
-      "GridProjection": false,
-      "HideWhenFaceDown": false,
-      "Hands": false,
-      "LuaScript": "",
-      "LuaScriptState": "",
-      "XmlUI": ""
-    },
-    {
-      "GUID": "da43f3",
-      "Name": "Notecard",
-      "Transform": {
-        "posX": -5.071684,
-        "posY": 1.23077738,
-        "posZ": -10.42734,
-        "rotX": 359.931519,
-        "rotY": 0.0118901217,
-        "rotZ": 359.786316,
-        "scaleX": 1.0,
-        "scaleY": 1.0,
-        "scaleZ": 1.0
-      },
-      "Nickname": "Dad Joke",
-      "Description": "What do you call a pig with three eyes? Piiig",
-      "GMNotes": "",
-      "AltLookAngle": {
-        "x": 0.0,
-        "y": 0.0,
-        "z": 0.0
-      },
-      "ColorDiffuse": {
-        "r": 1.0,
-        "g": 1.0,
-        "b": 1.0
-      },
-      "LayoutGroupSortIndex": 0,
-      "Value": 0,
-      "Locked": false,
-      "Grid": true,
-      "Snap": true,
-      "IgnoreFoW": false,
-      "MeasureMovement": false,
-      "DragSelectable": true,
-      "Autoraise": true,
-      "Sticky": true,
-      "Tooltip": true,
-      "GridProjection": false,
-      "HideWhenFaceDown": false,
-      "Hands": false,
-      "LuaScript": "",
-      "LuaScriptState": "",
-      "XmlUI": ""
     }
   ]
 }
