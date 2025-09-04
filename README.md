@@ -40,5 +40,6 @@ Side effects may include:
 ## 📚 Resources
 
 - [Some assets and a copy of the savegame on GitHub](https://github.com/cornernote/tabletop_simulator-dad_jokes)
+- [Game on Tabletop Simulator Steam Workshop](https://steamcommunity.com/sharedfiles/filedetails/?id=3561179987)
 
 ---
