@@ -11,7 +11,7 @@
 
 local AutoUpdater = {
     name = "Endless Dad Jokes",
-    version = "1.0.0",
+    version = "1.0.1",
     versionUrl = "https://raw.githubusercontent.com/cornernote/tabletop_simulator-dad_jokes/refs/heads/main/lua/dad-jokes.ver",
     scriptUrl = "https://raw.githubusercontent.com/cornernote/tabletop_simulator-dad_jokes/refs/heads/main/lua/dad-jokes.lua",
 }
@@ -67,32 +67,29 @@ end
 -- Main script
 -----------------------------------------------------------------------
 
-local apiUrl = "https://icanhazdadjoke.com/"
-local apiHeaders = { Accept = "application/json" }
-
-function onObjectLeaveContainer(container, leave_object)
+function onObjectLeaveContainer(container, leaveObject)
     if container ~= self then
         return
     end
 
-    leave_object.setName("Dad Joke")
-    leave_object.setDescription("Loading...")
+    leaveObject.setName("Dad Joke")
+    leaveObject.setDescription("Loading...")
 
-    WebRequest.custom(apiUrl, "GET", true, "{}", apiHeaders, function(request)
-        if request.is_error then
-            leave_object.setName("Error Loading Dad Joke")
-            leave_object.setDescription(request.error)
+    WebRequest.custom("https://icanhazdadjoke.com/", "GET", true, "{}", { Accept = "application/json" }, function(request)
+        if request.response_code ~= 200 then
+            leaveObject.setName("Error Loading Dad Joke")
+            leaveObject.setDescription(request.error)
             return
         end
 
         local data = JSON.decode(request.text or "{}")
 
         if not data.joke then
-            leave_object.setName("Error Loading Dad Joke")
-            leave_object.setDescription("No joke found.")
+            leaveObject.setName("Error Loading Dad Joke")
+            leaveObject.setDescription("No joke found.")
             return
         end
 
-        leave_object.setDescription(data.joke)
+        leaveObject.setDescription(data.joke)
     end)
 end
