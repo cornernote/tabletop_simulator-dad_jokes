@@ -5,70 +5,67 @@
 =======================================================================
 ]]--
 
------------------------------------------------------------------------
--- AutoUpdater - downloads the latest version
------------------------------------------------------------------------
-
 local AutoUpdater = {
     name = "Endless Dad Jokes",
-    version = "1.0.1",
+    version = "1.0.2",
     versionUrl = "https://raw.githubusercontent.com/cornernote/tabletop_simulator-dad_jokes/refs/heads/main/lua/dad-jokes.ver",
     scriptUrl = "https://raw.githubusercontent.com/cornernote/tabletop_simulator-dad_jokes/refs/heads/main/lua/dad-jokes.lua",
+
+    isNewerVersion = function(self, remoteVersion)
+        local function split(v)
+            local t = {}
+            for n in v:gmatch("%d+") do
+                table.insert(t, tonumber(n))
+            end
+            return t
+        end
+
+        local r, l = split(remoteVersion), split(self.version)
+        for i = 1, math.max(#r, #l) do
+            local rv, lv = r[i] or 0, l[i] or 0
+            if rv > lv then
+                return true
+            end
+            if rv < lv then
+                return false
+            end
+        end
+        return false
+    end,
+
+    fetchNewScript = function(self, newVersion)
+        WebRequest.get(self.scriptUrl, function(request)
+            if request.response_code ~= 200 then
+                return
+            end
+            if request.text and #request.text > 0 then
+                self.host.setLuaScript(request.text)
+                self.host.reload()
+                print(self.name .. ": Updated to version " .. newVersion)
+            end
+        end)
+    end,
+
+    checkForUpdate = function(self)
+        if not self.host then
+            return
+        end
+        WebRequest.get(self.versionUrl, function(request)
+            if request.response_code ~= 200 then
+                print(self.name .. ": Failed to check version (" .. request.response_code .. ")")
+                return
+            end
+            local remoteVersion = request.text:match("[^\r\n]+") or ""
+            if remoteVersion ~= "" and self:isNewerVersion(remoteVersion) then
+                self:fetchNewScript(remoteVersion)
+            end
+        end)
+    end,
 }
 
-AutoUpdater.isNewerVersion = function(remoteVersion)
-    local function split(v)
-        local t = {}
-        for n in v:gmatch("%d+") do
-            table.insert(t, tonumber(n))
-        end
-        return t
-    end
-
-    local r, l = split(remoteVersion), split(AutoUpdater.version)
-    for i = 1, math.max(#r, #l) do
-        local rv, lv = r[i] or 0, l[i] or 0
-        if rv > lv then
-            return true
-        end
-        if rv < lv then
-            return false
-        end
-    end
-    return false
-end
-
-AutoUpdater.checkForUpdate = function()
-    WebRequest.get(AutoUpdater.versionUrl, function(request)
-        if request.response_code ~= 200 then
-            return
-        end
-        local remoteVersion = request.text:match("[^\r\n]+") or ""
-        if remoteVersion ~= "" and AutoUpdater.isNewerVersion(remoteVersion) then
-            AutoUpdater.fetchNewScript(remoteVersion)
-        end
-    end)
-end
-
-AutoUpdater.fetchNewScript = function(newVersion)
-    WebRequest.get(AutoUpdater.scriptUrl, function(request)
-        if request.response_code ~= 200 then
-            return
-        end
-        if request.text and #request.text > 0 then
-            self.setLuaScript(request.text)
-            self.reload()
-            print(AutoUpdater.name .. ": Updated script to version " .. newVersion)
-        end
-    end)
-end
-
------------------------------------------------------------------------
--- Main script
------------------------------------------------------------------------
-
 function onLoad()
-    AutoUpdater.checkForUpdate()
+    AutoUpdater.host = self
+    AutoUpdater:checkForUpdate()
 end
 
 function onObjectLeaveContainer(container, leaveObject)
