@@ -67,6 +67,10 @@ end
 -- Main script
 -----------------------------------------------------------------------
 
+function onLoad()
+    AutoUpdater.checkForUpdate()
+end
+
 function onObjectLeaveContainer(container, leaveObject)
     if container ~= self then
         return
