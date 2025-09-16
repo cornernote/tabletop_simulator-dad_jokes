@@ -1,13 +1,6 @@
---[[
-=======================================================================
-== Endless Dad Jokes by CoRNeRNoTe
-== Pull a notecard to get a random dad joke.
-=======================================================================
-]]--
-
 local AutoUpdater = {
     name = "Endless Dad Jokes",
-    version = "1.0.2",
+    version = "1.0.3",
     versionUrl = "https://raw.githubusercontent.com/cornernote/tabletop_simulator-dad_jokes/refs/heads/main/lua/dad-jokes.ver",
     scriptUrl = "https://raw.githubusercontent.com/cornernote/tabletop_simulator-dad_jokes/refs/heads/main/lua/dad-jokes.lua",
 
@@ -40,8 +33,14 @@ local AutoUpdater = {
             end
             if request.text and #request.text > 0 then
                 self.host.setLuaScript(request.text)
-                self.host.reload()
                 print(self.name .. ": Updated to version " .. newVersion)
+                Wait.condition(function()
+                    if self.host then
+                        self.host.reload()
+                    end
+                end, function()
+                    return not self.host or self.host.resting
+                end)
             end
         end)
     end,
