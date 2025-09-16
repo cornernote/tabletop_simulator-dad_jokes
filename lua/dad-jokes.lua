@@ -1,8 +1,13 @@
 local AutoUpdater = {
     name = "Endless Dad Jokes",
-    version = "1.0.3",
+    version = "1.0.4",
     versionUrl = "https://raw.githubusercontent.com/cornernote/tabletop_simulator-dad_jokes/refs/heads/main/lua/dad-jokes.ver",
     scriptUrl = "https://raw.githubusercontent.com/cornernote/tabletop_simulator-dad_jokes/refs/heads/main/lua/dad-jokes.lua",
+
+    run = function(self, host)
+        self.host = host
+        self:checkForUpdate()
+    end,
 
     isNewerVersion = function(self, remoteVersion)
         local function split(v)
@@ -63,8 +68,7 @@ local AutoUpdater = {
 }
 
 function onLoad()
-    AutoUpdater.host = self
-    AutoUpdater:checkForUpdate()
+    AutoUpdater:run(self)
 end
 
 function onObjectLeaveContainer(container, leaveObject)
