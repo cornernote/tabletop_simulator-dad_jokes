@@ -1,6 +1,6 @@
 local AutoUpdater = {
     name = "Endless Dad Jokes",
-    version = "1.0.4",
+    version = "1.0.5",
     versionUrl = "https://raw.githubusercontent.com/cornernote/tabletop_simulator-dad_jokes/refs/heads/main/lua/dad-jokes.ver",
     scriptUrl = "https://raw.githubusercontent.com/cornernote/tabletop_simulator-dad_jokes/refs/heads/main/lua/dad-jokes.lua",
     debug = false,
